@@ -7,16 +7,32 @@ import {
 import {
     BottonSVG
 } from '../svg';
+import {
+    REPO_TYPE,
+    LANGUAGE_TYPE
+} from '../../../../../constants'
 
 export default class SearchLayout extends Component {
+    constructor(props){
+        super(props);
+
+    }
+
+    searchItem = (e) => {
+        // console.log(e.target.value)
+    }
+    handleKeyPress = (e) => {
+        if(e.key === 'Enter') console.log(e.target.value)
+    }
     render(){
-        const REPO_TYPE = ['All', 'Public', 'Private', 'Sources', 'Forks', 'Archived', 'Mirrors'];
-        const LANGUAGE_TYPE = ['All', 'Javascript', 'Java', 'HTML'];
         return(
             <SearchContainer>
                 <SearchWrapper>
                      <input 
                      className='searcBar' 
+                     onChange={this.searchItem}
+                     onKeyPress={this.handleKeyPress}
+                     placeholder='Find a Repository..'
                      type='text' />
                 </SearchWrapper>
                 <SelectFilterWrapper>
@@ -44,7 +60,7 @@ export default class SearchLayout extends Component {
                     </select>
                     <button className='primary-btn' >
                         <BottonSVG  />
-                         <span> NEW </span>
+                         <span> New </span>
                     </button>
                 </SelectFilterWrapper>
             </SearchContainer>

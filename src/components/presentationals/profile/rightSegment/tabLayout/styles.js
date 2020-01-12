@@ -3,7 +3,11 @@ import styled from 'styled-components';
 export const TabWrapper = styled.div`
     font-size: 14px;
     cursor: pointer;
-    
+    width: 740px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+
     ul {
         list-style-type: none;
         margin: 0;

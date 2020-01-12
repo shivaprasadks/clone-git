@@ -1,13 +1,20 @@
 import styled from 'styled-components';
-
+import {device} from '../../../../constants/devices'
 export const ContentWrapper = styled.div`
     margin : 10px;
-    max-width: 300px;
+    // max-width: 100%;
 `;
 export const ImageWrapper = styled.div` 
     img {
         width :100%;
+        max-width: 150px;
         border-radius: 5px;
+        margin-right: 30px;
+        @media ${device.tablet} {
+            max-width: 300px;
+            margin-right: 0px
+        }
+
     }
 `;
 
@@ -31,7 +38,7 @@ export const BioWrapper = styled.div`
     padding : 10px 0;
     border-bottom : solid 1px #dfdfdfe3;
     font-size :14px;
-
+    display: none;
     .editBio {
         width: 100%;
         margin: 10px 0;
@@ -59,6 +66,9 @@ export const BioWrapper = styled.div`
         border: 1px solid rgba(27,31,35,.2);
         border-radius: .25em;
     }
+    @media ${device.tablet} {
+       display: block;
+    }
 `;
 
 export const DetailsWrapper = styled.div`
@@ -76,5 +86,15 @@ export const DetailsWrapper = styled.div`
                 padding-left: 10px;
             }
         }
+    }
+`;
+
+export const ImageBioWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    
+    // Switch to rows on large devices
+    @media ${device.tablet} {
+      flex-direction: column;
     }
 `;

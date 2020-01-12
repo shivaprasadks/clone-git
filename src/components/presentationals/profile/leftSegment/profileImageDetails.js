@@ -3,7 +3,8 @@ import {
     ImageWrapper,
     NameEmailWrapper,
     BioWrapper,
-    DetailsWrapper, } from './styles';
+    DetailsWrapper,
+    ImageBioWrapper, } from './styles';
 import {
     PeoplSVG,
     LocationSVG,
@@ -11,7 +12,7 @@ import {
 } from './svgImage';
 
 export const ProfileImage = (props) => (
-    <div>
+    <ImageBioWrapper>
          <ImageWrapper> 
             <img src={props.imgURL || 'https://avatars1.githubusercontent.com/u/7427552?v=4'}/>
         </ImageWrapper>
@@ -23,7 +24,7 @@ export const ProfileImage = (props) => (
                 {props.loginName}
             </div>
         </NameEmailWrapper>
-    </div>
+    </ImageBioWrapper>
    
 );
 

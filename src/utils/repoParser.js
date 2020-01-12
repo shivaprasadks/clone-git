@@ -27,7 +27,7 @@ export const repoListParse = () => {
             description : item.description ,
             language : item.language,
             license : item.license,
-            forks :  item.forks,
+            forks :  item.forks_count,
             updated_at : getDateDiff(item.updated_at),
         })
     ))

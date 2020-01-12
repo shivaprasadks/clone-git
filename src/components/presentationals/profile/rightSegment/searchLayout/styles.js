@@ -1,8 +1,16 @@
 import styled from 'styled-components';
+import { device} from '../../../../../constants/devices'
 export const SearchContainer = styled.div`
     display: flex;
+    flex-direction: column;
     align-items: center;
-    border-bottom: solid 1px #dfdfdfdf;         
+    border-bottom: solid 1px #dfdfdfdf;   
+
+    // Switch to rows on large devices
+    @media ${device.tablet} {
+      flex-direction: row;
+    }
+
 `;
 
 export const SearchWrapper = styled.div`
@@ -27,6 +35,8 @@ export const SearchWrapper = styled.div`
             outline: none;
             box-shadow: inset 0 1px 2px rgba(27,31,35,.075), 0 0 0 0.2em rgba(3,102,214,.3);
         }
+
+        
     }
     
 `;

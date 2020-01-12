@@ -5,6 +5,9 @@ import {
     FooterItems,
     RoundDot,
 } from './styles';
+import {
+    MitSVG
+} from '../svg';
 import { repoListParse } from '../../../../../utils/repoParser';
 export default class ListLayout extends Component {
     componentDidMount = () => {
@@ -32,14 +35,18 @@ export default class ListLayout extends Component {
                                 <RoundDot/> {item.language}
                             </span>
                             : item.language }
-                                    
-                           {item.updated_at  ? 
+                            
+                            {item.license ? 
+                                <span>
+                                    <MitSVG /> {item.license.name}
+                                </span>
+                                : item.license }
+                               
+                            {item.updated_at  ? 
                             <span className='footerItem'>
                                  {item.updated_at}
                             </span>
                             : item.updated_at }
-
-                               
                             
                         </FooterItems>
                     </ItemWrapper>
