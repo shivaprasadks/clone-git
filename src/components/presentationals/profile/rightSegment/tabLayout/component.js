@@ -3,10 +3,12 @@ import {
     TabWrapper,
     CountCircle,
 }from './styles';
-
+import {
+    TAB_ITEMS
+} from '../../../../../constants'
 export default class TabLayout extends Component {
     render(){
-        const TAB_ITEMS = ['Overview', 'Repositories', 'Projects', 'Packages', 'Stars', 'Followers', 'Following'];
+        
         return(
             <TabWrapper>
                 <ul>
@@ -15,7 +17,7 @@ export default class TabLayout extends Component {
                             {index=== 1 ?  
                             <span className='tabItem active'>{item}
                                 <CountCircle>
-                                    26
+                                    null
                                 </CountCircle>
                             </span> :
                             <span className='tabItem'>{item}</span>}

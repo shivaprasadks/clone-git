@@ -8,6 +8,10 @@ export const REPO_DETAILS_API = 'https://api.github.com/users/supreetsingh247/re
 export const REPO_TYPE = ['All', 'Public', 'Private', 'Sources', 'Forks', 'Archived', 'Mirrors'];
 export const LANGUAGE_TYPE = ['All', 'Javascript', 'Java', 'HTML'];
 
+//tab items
+export const TAB_ITEMS = ['Overview', 'Repositories', 'Projects', 'Packages', 'Stars', 'Followers', 'Following'];
+
+
 //screen size
 export const SCREEN_SIZE = {
     mobileS: '320px',

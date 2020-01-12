@@ -2,7 +2,6 @@ import moment from 'moment';
 import {
     RepoList
 } from './resposeData';
-
 /**
  * Function to get the day difference for the give repo last updated 
  * @param {date} updatedDate lastRepo updated date

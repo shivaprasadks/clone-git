@@ -53,6 +53,7 @@ export const PersonalDetails = (props) => (
                     {props.location}
                 </span>
             </li>
+            {props.webiste ?
             <li>
                 <LinkSVG />
                 <span className='textPart'>
@@ -60,7 +61,7 @@ export const PersonalDetails = (props) => (
                     {props.webiste}
                     </a>
                 </span>
-            </li>
+            </li>: null}
            
         </ul>
     </DetailsWrapper>

@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import TabLayout from './tabLayout/component';
+import TabLayout from './tabLayout/container';
 import SearchLayout from './searchLayout/component';
 import { 
     RightSegmentContainer,
