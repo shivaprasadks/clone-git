@@ -33,7 +33,7 @@ export const BioDetails = (props) => (
         <div>
             {props.workExperience}
         </div>
-        <button className='editBio'> Edit Bio </button>
+        <button className='editBio btn'> Edit Bio </button>
     </BioWrapper>
 );
 
