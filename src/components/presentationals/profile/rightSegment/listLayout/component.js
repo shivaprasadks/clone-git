@@ -18,8 +18,9 @@ export default class ListLayout extends Component {
         const data =  repoListParse();
         return(
             <ListContainer>
-                {data.map((item)=>(
-                    <ItemWrapper>
+                {data.map((item, index)=>(
+                    <ItemWrapper
+                        key={index}>
                         <div className='title'>
                             <a href=''>
                             {item.projectName}

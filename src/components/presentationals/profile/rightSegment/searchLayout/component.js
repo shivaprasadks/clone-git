@@ -15,7 +15,10 @@ import {
 export default class SearchLayout extends Component {
     constructor(props){
         super(props);
-
+        this.state = {
+            repoType:  'All',
+            language: 'All'
+        }
     }
 
     searchItem = (e) => {
@@ -23,6 +26,21 @@ export default class SearchLayout extends Component {
     }
     handleKeyPress = (e) => {
         if(e.key === 'Enter') console.log(e.target.value)
+    }
+    updatedRepoType = (e) => {
+        this.setState({
+            ...this.state,
+            repoType: e.target.value
+        });
+    }
+    updatedLanguage = (e) => {
+        this.setState({
+            ...this.state,
+            language: e.target.value
+        });
+    }
+    componentDidUpdate = () =>{
+        console.log(this.state);
     }
     render(){
         return(
@@ -36,26 +54,28 @@ export default class SearchLayout extends Component {
                      type='text' />
                 </SearchWrapper>
                 <SelectFilterWrapper>
-                    <select className='select-list primary-btn'>
+                    <select value={this.state.repoType} 
+                    onChange={this.updatedRepoType}
+                    className='select-list primary-btn'>
                         {REPO_TYPE.map((item,index)=>(
                              <option  
                                 key={index}
                                 className='select-menu-item' 
-                                selected >{item}
+                             >{item}
                             </option>
                         ))}
-                        {/* <option  className='select-menu-item' selected value="coconut">Coconut</option> */}
                      
                     </select>
-                    <select className='select-list primary-btn'>
+                    <select value={this.state.language} 
+                        onChange={this.updatedLanguage}
+                        className='select-list primary-btn'>
                         {LANGUAGE_TYPE.map((item,index)=>(
                              <option  
                                 key={index}
-                                className='select-menu-item' 
-                                selected >{item}
+                                className='select-menu-item' >
+                                {item}
                             </option>
                         ))}
-                        {/* <option  className='select-menu-item' selected value="coconut">Coconut</option> */}
                      
                     </select>
                     <button className='primary-btn' >
