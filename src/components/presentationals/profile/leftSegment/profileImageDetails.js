@@ -13,7 +13,7 @@ import {
 export const ProfileImage = (props) => (
     <div>
          <ImageWrapper> 
-            <img src={props.imgURL || ''}/>
+            <img src={props.imgURL || 'https://avatars1.githubusercontent.com/u/7427552?v=4'}/>
         </ImageWrapper>
         <NameEmailWrapper>
             <div className='userName'>

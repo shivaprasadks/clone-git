@@ -10,7 +10,7 @@ export default class TabLayout extends Component {
             <TabWrapper>
                 <ul>
                     {TAB_ITEMS.map((item, index) => (
-                        <li id={index}>
+                        <li key={index}>
                             {index=== 1 ?  
                             <span className='tabItem active'>{item}</span> :
                             <span className='tabItem'>{item}</span>}
