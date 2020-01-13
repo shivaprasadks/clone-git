@@ -6,10 +6,10 @@ import {
 } from 'app/utils/repoParser';
 export const searchItem = (searchText) => {
     return (dispatch , getState) => {
-        const {repoList, filterValue}  = getState();
+        const {repoList}  = getState();
        dispatch({
            type: UPDATE_FILTERED_DATA,
-           payload: filterData(repoList, filterValue, searchText)
+           payload: filterData(repoList, searchText)
        });
     }
 }

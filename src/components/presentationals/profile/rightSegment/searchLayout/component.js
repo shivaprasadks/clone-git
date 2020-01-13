@@ -16,39 +16,44 @@ export default class SearchLayout extends Component {
     constructor(props){
         super(props);
         this.state = {
-            repoType:  'All',
-            language: 'All'
+            repoType:  'all',
+            language: 'all',
+            serachString: '',
         }
     }
 
     searchItem = (e) => {
-        // console.log(e.target.value)
-        this.props.searchItem(e.target.value);
+        let stateValueUpdate = {
+            ...this.state,
+            serachString: e.target.value
+        };
+        this.setState(stateValueUpdate);
+        this.props.searchItem(stateValueUpdate);
+        this.props.updateFilter(stateValueUpdate);
     }
     handleKeyPress = (e) => {
         if(e.key === 'Enter'){
-            this.props.searchItem(e.target.value, );
+            this.searchItem(e);
         } 
     }
     updatedRepoType = (e) => {
-        this.setState({
+        let stateValueUpdate = {
             ...this.state,
             repoType: e.target.value
-        });
-        this.props.updateFilter({
-            ...this.state,
-            repoType: e.target.value
-        });
+        };
+        this.setState(stateValueUpdate);
+        this.props.searchItem(stateValueUpdate);
+        this.props.updateFilter(stateValueUpdate);
     }
     updatedLanguage = (e) => {
-        this.setState({
+        let stateValueUpdate = {
             ...this.state,
             language: e.target.value
-        });
-        this.props.updateFilter({
-            ...this.state,
-            language: e.target.value
-        });
+        };
+
+        this.setState(stateValueUpdate);
+        this.props.searchItem(stateValueUpdate);
+        this.props.updateFilter(stateValueUpdate);
     }
 
     render(){

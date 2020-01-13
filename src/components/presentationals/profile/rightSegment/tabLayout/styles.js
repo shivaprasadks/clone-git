@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const TabWrapper = styled.div`
     font-size: 14px;
     cursor: pointer;
-    width: 800px;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
@@ -13,6 +12,7 @@ export const TabWrapper = styled.div`
         list-style-type: none;
         margin: 0;
         padding: 0;
+        min-width:780px;
         li {
            
             float: left;

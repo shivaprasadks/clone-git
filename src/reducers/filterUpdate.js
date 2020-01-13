@@ -4,8 +4,8 @@ import {
 } from 'app/actions/types'
 
 export const filterData = (state = {
-    repoType:  'All',
-    language: 'All'
+    repoType:  'all',
+    language: 'all'
 }, action) => {
     switch(action.type){
         case UPDATE_FILTER_VALUE :

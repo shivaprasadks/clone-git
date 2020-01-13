@@ -38,6 +38,7 @@ const getFilterIndex = (filterData) =>{
     // if(filterData.repoType )
 }
 
+
 /**
  * Function to sort the data on filter applied
  * @param {*} rawData  raw data with all the value
@@ -47,10 +48,20 @@ const getFilterIndex = (filterData) =>{
 export const filterData = (rawData, filterValue, searchText) => {
     // rawData  = RepoList
    const processedData = [];
+   let searchStr = filterValue && filterValue.serachString || '';
+   let language = filterValue && filterValue.language || 'all';
+   let repoType = filterValue && filterValue.repoType || 'all';
    rawData.forEach((item) => {
-        searchText =  searchText.toLowerCase();
+        searchStr =  searchStr.toLowerCase();
        let dataString = item.name.toLowerCase();
-       if(dataString.startsWith(searchText)) processedData.push(item);
+       if(dataString.startsWith(searchStr)){
+           if(language === 'all' || item.language === language)  {
+               if(repoType === 'all' || item[repoType]){
+                    processedData.push(item);
+               }
+               
+           }    
+       } 
    });
 
     return processedData;
