@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device} from '../../../../../constants/devices'
+import { device} from 'app/constants/devices'
 export const SearchContainer = styled.div`
     display: flex;
     flex-direction: column;

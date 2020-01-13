@@ -4,7 +4,7 @@ import  {
     BioDetails,
     PersonalDetails,} from './profileImageDetails';
 import { ContentWrapper } from './styles'
-import { profileData} from '../../../../utils/resposeData'
+import { profileData} from 'app/utils/resposeData'
 
 export default class LeftSideView extends Component {
     componentDidMount = () =>{

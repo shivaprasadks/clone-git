@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../../constants/devices';
+import { device } from 'app/constants/devices';
 
 export const WindowContainer = styled.div`
     max-width: 1280px;

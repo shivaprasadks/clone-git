@@ -10,7 +10,7 @@ import {
 import {
     REPO_TYPE,
     LANGUAGE_TYPE
-} from '../../../../../constants'
+} from 'app/constants'
 
 export default class SearchLayout extends Component {
     constructor(props){
