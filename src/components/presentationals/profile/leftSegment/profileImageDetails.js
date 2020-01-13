@@ -3,7 +3,8 @@ import {
     ImageWrapper,
     NameEmailWrapper,
     BioWrapper,
-    DetailsWrapper, } from './styles';
+    DetailsWrapper,
+    ImageBioWrapper, } from './styles';
 import {
     PeoplSVG,
     LocationSVG,
@@ -11,9 +12,9 @@ import {
 } from './svgImage';
 
 export const ProfileImage = (props) => (
-    <div>
+    <ImageBioWrapper>
          <ImageWrapper> 
-            <img src={props.imgURL || ''}/>
+            <img src={props.imgURL || 'https://avatars1.githubusercontent.com/u/7427552?v=4'}/>
         </ImageWrapper>
         <NameEmailWrapper>
             <div className='userName'>
@@ -23,7 +24,7 @@ export const ProfileImage = (props) => (
                 {props.loginName}
             </div>
         </NameEmailWrapper>
-    </div>
+    </ImageBioWrapper>
    
 );
 
@@ -33,7 +34,7 @@ export const BioDetails = (props) => (
         <div>
             {props.workExperience}
         </div>
-        <button className='editBio'> Edit Bio </button>
+        <button className='editBio btn'> Edit Bio </button>
     </BioWrapper>
 );
 
@@ -52,6 +53,7 @@ export const PersonalDetails = (props) => (
                     {props.location}
                 </span>
             </li>
+            {props.webiste ?
             <li>
                 <LinkSVG />
                 <span className='textPart'>
@@ -59,7 +61,7 @@ export const PersonalDetails = (props) => (
                     {props.webiste}
                     </a>
                 </span>
-            </li>
+            </li>: null}
            
         </ul>
     </DetailsWrapper>

@@ -1,18 +1,25 @@
 import React , { Component} from 'react';
 import {
     TabWrapper,
+    CountCircle,
 }from './styles';
-
+import {
+    TAB_ITEMS
+} from '../../../../../constants'
 export default class TabLayout extends Component {
     render(){
-        const TAB_ITEMS = ['Overview', 'Repositories', 'Projects', 'Packages', 'Stars', 'Followers', 'Following'];
+        
         return(
             <TabWrapper>
                 <ul>
                     {TAB_ITEMS.map((item, index) => (
-                        <li id={index}>
+                        <li key={index}>
                             {index=== 1 ?  
-                            <span className='tabItem active'>{item}</span> :
+                            <span className='tabItem active'>{item}
+                                <CountCircle>
+                                    null
+                                </CountCircle>
+                            </span> :
                             <span className='tabItem'>{item}</span>}
                               
                         </li>
