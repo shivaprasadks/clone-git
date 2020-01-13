@@ -15,6 +15,8 @@ export const ListContainer =styled.div`
     .subTitle{
         margin: 8px 0;
         color: #586069;
+        width: 75%;
+        font-size: 14px;
     }
 `;
 
