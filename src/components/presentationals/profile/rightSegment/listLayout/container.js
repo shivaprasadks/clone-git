@@ -4,7 +4,7 @@ import {
 import ListLayout from './component';
 import {
     fetchRepoList,
-} from '../../../../../actions/fetchRepoList';
+} from 'app/actions/fetchRepoList';
 
 const mapStateToProps = state => ({
     repoList : state.repoList

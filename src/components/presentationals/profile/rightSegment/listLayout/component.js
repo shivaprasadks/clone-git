@@ -8,7 +8,7 @@ import {
 import {
     MitSVG
 } from '../svg';
-import { repoListParse } from '../../../../../utils/repoParser';
+import { repoListParse } from 'app/utils/repoParser';
 export default class ListLayout extends Component {
     componentDidMount = () => {
         // this.props.fetchRepoList();

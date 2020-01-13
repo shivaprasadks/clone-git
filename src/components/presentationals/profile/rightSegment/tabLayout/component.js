@@ -5,7 +5,7 @@ import {
 }from './styles';
 import {
     TAB_ITEMS
-} from '../../../../../constants'
+} from 'app/constants';
 export default class TabLayout extends Component {
     render(){
         
@@ -17,7 +17,7 @@ export default class TabLayout extends Component {
                             {index=== 1 ?  
                             <span className='tabItem active'>{item}
                                 <CountCircle>
-                                    null
+                                    26
                                 </CountCircle>
                             </span> :
                             <span className='tabItem'>{item}</span>}
