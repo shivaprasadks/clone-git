@@ -15,6 +15,8 @@ export const ListContainer =styled.div`
     .subTitle{
         margin: 8px 0;
         color: #586069;
+        width: 75%;
+        font-size: 14px;
     }
 `;
 
@@ -42,4 +44,10 @@ export const RoundDot = styled.span`
     height: 12px;
     border-radius: 50%;
     margin-right: 5px;
+`;
+
+
+export const NoDataView = styled.div`
+    padding: 16px 0;
+    border-bottom: 1px solid #e1e4e8!important;
 `;

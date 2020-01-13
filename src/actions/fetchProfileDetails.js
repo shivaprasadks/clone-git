@@ -1,10 +1,11 @@
 import {
     PROFILE_DATA_API
-} from '../constants';
+} from 'app/constants';
 import {
     PROFILE_DATA_FAIL,
     PROFILE_DATA_SUCCESS,
 } from './types';
+
 
 export const fetchProfileDetials = () => {
 

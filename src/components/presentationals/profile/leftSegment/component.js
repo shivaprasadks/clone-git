@@ -3,15 +3,14 @@ import  {
     ProfileImage,
     BioDetails,
     PersonalDetails,} from './profileImageDetails';
-import { ContentWrapper } from './styles'
-import { profileData} from 'app/utils/resposeData'
+import { ContentWrapper } from './styles';
 
 export default class LeftSideView extends Component {
     componentDidMount = () =>{
-        // this.props.fetchProfileDetials();
+        this.props.fetchProfileDetials();
     }
     render() {
-        // const { profileData } = this.props;
+        const { profileData } = this.props;
         return(
         <ContentWrapper>
             <ProfileImage 

@@ -9,12 +9,12 @@ import {
     PeoplSVG,
     LocationSVG,
     LinkSVG
-} from './svgImage';
+} from 'app/constants/svg';
 
 export const ProfileImage = (props) => (
     <ImageBioWrapper>
          <ImageWrapper> 
-            <img src={props.imgURL || 'https://avatars1.githubusercontent.com/u/7427552?v=4'}/>
+            <img src={props.imgURL || 'https://i.stack.imgur.com/frlIf.png'}/>
         </ImageWrapper>
         <NameEmailWrapper>
             <div className='userName'>

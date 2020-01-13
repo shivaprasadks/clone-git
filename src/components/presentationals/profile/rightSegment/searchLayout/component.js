@@ -6,7 +6,7 @@ import {
 } from './styles';
 import {
     BottonSVG
-} from '../svg';
+} from 'app/constants/svg';
 import {
     REPO_TYPE,
     LANGUAGE_TYPE
@@ -16,32 +16,46 @@ export default class SearchLayout extends Component {
     constructor(props){
         super(props);
         this.state = {
-            repoType:  'All',
-            language: 'All'
+            repoType:  'all',
+            language: 'all',
+            serachString: '',
         }
     }
 
     searchItem = (e) => {
-        // console.log(e.target.value)
+        let stateValueUpdate = {
+            ...this.state,
+            serachString: e.target.value
+        };
+        this.setState(stateValueUpdate);
+        this.props.searchItem(stateValueUpdate);
+        this.props.updateFilter(stateValueUpdate);
     }
     handleKeyPress = (e) => {
-        if(e.key === 'Enter') console.log(e.target.value)
+        if(e.key === 'Enter'){
+            this.searchItem(e);
+        } 
     }
     updatedRepoType = (e) => {
-        this.setState({
+        let stateValueUpdate = {
             ...this.state,
             repoType: e.target.value
-        });
+        };
+        this.setState(stateValueUpdate);
+        this.props.searchItem(stateValueUpdate);
+        this.props.updateFilter(stateValueUpdate);
     }
     updatedLanguage = (e) => {
-        this.setState({
+        let stateValueUpdate = {
             ...this.state,
             language: e.target.value
-        });
+        };
+
+        this.setState(stateValueUpdate);
+        this.props.searchItem(stateValueUpdate);
+        this.props.updateFilter(stateValueUpdate);
     }
-    componentDidUpdate = () =>{
-        console.log(this.state);
-    }
+
     render(){
         return(
             <SearchContainer>
@@ -61,7 +75,8 @@ export default class SearchLayout extends Component {
                              <option  
                                 key={index}
                                 className='select-menu-item' 
-                             >{item}
+                                value={item.key}
+                             >{item.lable}
                             </option>
                         ))}
                      
@@ -72,8 +87,9 @@ export default class SearchLayout extends Component {
                         {LANGUAGE_TYPE.map((item,index)=>(
                              <option  
                                 key={index}
-                                className='select-menu-item' >
-                                {item}
+                                className='select-menu-item'
+                                value={item.key} >
+                                {item.lable}
                             </option>
                         ))}
                      

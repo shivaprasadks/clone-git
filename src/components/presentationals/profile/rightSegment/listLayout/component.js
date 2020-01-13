@@ -4,18 +4,19 @@ import {
     ItemWrapper,
     FooterItems,
     RoundDot,
+    NoDataView,
 } from './styles';
 import {
     MitSVG
-} from '../svg';
+} from 'app/constants/svg';
 import { repoListParse } from 'app/utils/repoParser';
 export default class ListLayout extends Component {
     componentDidMount = () => {
-        // this.props.fetchRepoList();
+        this.props.fetchRepoList();
         // repoListParse();
     }
     render(){
-        const data =  repoListParse();
+        const data =  repoListParse(this.props.filteredData);
         return(
             <ListContainer>
                 {data.map((item, index)=>(
@@ -53,6 +54,9 @@ export default class ListLayout extends Component {
                     </ItemWrapper>
                 ))}
                 
+                {data.length === 0 ? <NoDataView>
+                    0 results found
+                </NoDataView>: null}
             </ListContainer>
         );
     }

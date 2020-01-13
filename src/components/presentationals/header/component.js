@@ -5,7 +5,7 @@ import {
 } from './styles';
 import {
     LogoSvg,
-} from './logosvg';
+} from 'app/constants/svg';
 
 export default class HeaderLayout extends Component {
     render(){

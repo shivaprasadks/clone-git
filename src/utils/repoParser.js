@@ -1,7 +1,5 @@
 import moment from 'moment';
-import {
-    RepoList
-} from './resposeData';
+
 /**
  * Function to get the day difference for the give repo last updated 
  * @param {date} updatedDate lastRepo updated date
@@ -18,9 +16,9 @@ const getDateDiff = updatedDate => {
  * function to parse the response and transform for render
  * @param {object} repoList   list of repo received from api
  */
-export const repoListParse = () => {
+export const repoListParse = (rawData) => {
     const parsedData = [];
-    RepoList.map((item,index)=>(
+    rawData.map((item,index)=>(
         parsedData.push({
             projectName : item.name,
             description : item.description ,
@@ -31,4 +29,38 @@ export const repoListParse = () => {
         })
     ))
     return parsedData;
+}
+
+const getFilterIndex = (filterData) =>{
+
+    // if(filterData.repoType )
+}
+
+
+/**
+ * Function to sort the data on filter applied
+ * @param {*} rawData  raw data with all the value
+ * @param {*} filterValue filter data set by user
+ * @param {*} searchText search text in the input 
+ */
+export const filterData = (rawData, filterValue, searchText) => {
+    // rawData  = RepoList
+   const processedData = [];
+   let searchStr = filterValue && filterValue.serachString || '';
+   let language = filterValue && filterValue.language || 'all';
+   let repoType = filterValue && filterValue.repoType || 'all';
+   rawData.forEach((item) => {
+        searchStr =  searchStr.toLowerCase();
+       let dataString = item.name.toLowerCase();
+       if(dataString.startsWith(searchStr)){
+           if(language === 'all' || item.language === language)  {
+               if(repoType === 'all' || item[repoType]){
+                    processedData.push(item);
+               }
+               
+           }    
+       } 
+   });
+
+    return processedData;
 }
