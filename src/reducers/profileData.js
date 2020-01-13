@@ -3,7 +3,7 @@ import {
     PROFILE_DATA_FAIL
 } from '../actions/types'
 
-export const profileData = (state = {}, action) => {
+export const profileData = (state = [], action) => {
     switch(action.type){
         case PROFILE_DATA_SUCCESS :
             return action.payload;

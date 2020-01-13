@@ -8,7 +8,7 @@ import { profileData} from 'app/utils/resposeData'
 
 export default class LeftSideView extends Component {
     componentDidMount = () =>{
-        // this.props.fetchProfileDetials();
+        this.props.fetchProfileDetials();
     }
     render() {
         // const { profileData } = this.props;

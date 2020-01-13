@@ -9,7 +9,7 @@ import {
     PeoplSVG,
     LocationSVG,
     LinkSVG
-} from './svgImage';
+} from 'app/constants/svg';
 
 export const ProfileImage = (props) => (
     <ImageBioWrapper>

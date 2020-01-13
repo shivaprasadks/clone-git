@@ -7,7 +7,8 @@ import {
 } from 'app/actions/fetchRepoList';
 
 const mapStateToProps = state => ({
-    repoList : state.repoList
+    repoList : state.repoList,
+    filteredData : state.filteredData
 });
 
 const mapDispatchToProps = {

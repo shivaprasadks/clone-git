@@ -18,9 +18,9 @@ const getDateDiff = updatedDate => {
  * function to parse the response and transform for render
  * @param {object} repoList   list of repo received from api
  */
-export const repoListParse = () => {
+export const repoListParse = (rawData) => {
     const parsedData = [];
-    RepoList.map((item,index)=>(
+    rawData.map((item,index)=>(
         parsedData.push({
             projectName : item.name,
             description : item.description ,
@@ -31,4 +31,27 @@ export const repoListParse = () => {
         })
     ))
     return parsedData;
+}
+
+const getFilterIndex = (filterData) =>{
+
+    // if(filterData.repoType )
+}
+
+/**
+ * Function to sort the data on filter applied
+ * @param {*} rawData  raw data with all the value
+ * @param {*} filterValue filter data set by user
+ * @param {*} searchText search text in the input 
+ */
+export const filterData = (rawData, filterValue, searchText) => {
+    // rawData  = RepoList
+   const processedData = [];
+   rawData.forEach((item) => {
+        searchText =  searchText.toLowerCase();
+       let dataString = item.name.toLowerCase();
+       if(dataString.startsWith(searchText)) processedData.push(item);
+   });
+
+    return processedData;
 }
