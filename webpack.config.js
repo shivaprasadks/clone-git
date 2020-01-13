@@ -7,6 +7,16 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  resolve: {
+    modules: [
+      path.resolve(__dirname),
+      'node_modules',
+    ],
+    alias: {
+      app : path.resolve('./src')
+    },
+    extensions: ['.js', '.less'],
+  },
   module: {
     rules: [
       {
